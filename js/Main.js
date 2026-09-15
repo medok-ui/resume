@@ -22,6 +22,7 @@ class Main {
       });
     });
     this.filterSkills();
+    this.searchSkill();
   }
 
   filterSkills(category = "Все") {
@@ -34,6 +35,22 @@ class Main {
       (skill) => skill.category === category,
     );
     this.renderSkills(filtered);
+  }
+
+  searchSkill() {
+    const searchInput = document.getElementById("searchInput");
+    const notFoundText = document.getElementById("notFoundText");
+    searchInput.addEventListener("input", (e) => {
+      const search = this.skillsData.filter((skill) =>
+        skill.name.toLowerCase().includes(e.target.value.toLowerCase().trim()),
+      );
+      notFoundText.classList.add("hidden");
+      this.renderSkills(search);
+
+      if (search.length === 0) {
+        notFoundText.classList.remove("hidden");
+      }
+    });
   }
 
   renderSkills(skills) {

@@ -59,8 +59,7 @@
             <li class="education__item">
               <h3>Колледж</h3>
               <p>
-                Студент 1-го курса по специальности «Разработка программного
-                обеспечения» (код 09.02.11). База по алгоритмам, ООП и сетям.
+                Студент 1-го курса по специальности Разработка ПО.
               </p>
             </li>
             <li class="education__item">
@@ -94,7 +93,18 @@
               <button class="cat-btn">Frontend</button>
               <button class="cat-btn">Tools</button>
             </div>
+            <search>
+              <input
+                id="searchInput"
+                class="search-input"
+                type="text"
+                placeholder="Поиск..."
+              />
+            </search>
           </div>
+          <p id="notFoundText" class="not-found__text hidden">
+            Нечего не найдено(
+          </p>
           <ul id="skillsList" class="section__skills-list"></ul>
         </section>
         <section class="section projects">
